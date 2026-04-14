@@ -6,6 +6,10 @@
   --font-popins: "Poppins", sans-serif;
 }
 
+body {
+  background-color: black;
+}
+
 .nav-menu {
   @apply text-blue-500 text-lg hover:text-white hover:rounded-full px-4  transform ease-in-out duration-150 font-semibold;
 }

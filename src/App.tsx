@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contect from "./pages/Contect";
 import Register from "./pages/Register";
-import Sample from "./pages/Sample";
+import Sample from "./pages/Samples/Sample";
 
 function App() {
   return (
