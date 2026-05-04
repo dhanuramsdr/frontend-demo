@@ -5,23 +5,35 @@ import {
   Route,
   BrowserRouter,
 } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contect from "./pages/Contect";
-import Register from "./pages/Register";
-import Sample from "./pages/Samples/Sample";
+import React, { Suspense } from "react";
+import { AddUserPage } from "./component/Userform";
+import Producttable from "./Pages/Producttable";
+import Dashboard from "./Pages/Dashboard";
+import Selectedinput from "./component/Selectedinput";
+import Login from "./Pages/Login";
+import Userlisttable from "./Pages/Userlisttable";
+
+const Main = React.lazy(() => import("./Pages/Main"));
+const Produtform = React.lazy(() => import("./component/Productform"));
+const Table = React.lazy(() => import("./component/Table"));
 
 function App() {
   return (
     <>
+      {/* <Reactquery /> */}
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Sample />} />
-          {/* <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contect" element={<Contect />} />
-          <Route path="/register" element={<Register />} /> */}
-        </Routes>
+        <Suspense fallback={<p>Loading...</p>}>
+          <Routes>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/" element={<Main />}>
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="produtform" element={<Produtform />} />
+              <Route path="producttable" element={<Producttable />} />
+              <Route path="userlisttable" element={<Userlisttable />} />
+              <Route path="addUserPage" element={<AddUserPage />} />
+            </Route>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </>
   );
