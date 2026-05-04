@@ -8,6 +8,7 @@ import type { Productinterface } from "../interfaces/React-queru-interface/produ
 import { useUserDetails } from "../Globelstate/Store";
 
 const API_URL = import.meta.env.VITE_REACT_APP_API;
+//VITE_REACT_APP_API=http://localhost:3500/api/v1
 //user
 export const userRegisterMutaion = () => {
   return useMutation({
